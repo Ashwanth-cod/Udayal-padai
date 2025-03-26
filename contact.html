@@ -15,8 +15,7 @@
             flex-direction: row;
             background-color: #ffffff;
             box-shadow: 5px 5px 20px rgb(0, 0, 0);
-            height: auto;
-            min-height: 100px;
+            height: 100px;
             border-radius: 10px;
             margin-right: 150px;
             margin-left: 150px;
@@ -79,7 +78,7 @@
     <div class="grid-address">
         <div class="details">
             <span class="img-container">
-                <img id="location_img" style="border-radius: 50%;" src="contant/images/red_location.png" alt="Location" width="100">
+                <img id="location_img" style="border-radius: 50%;" src="contant/images/red_location.png" alt="Location:" width="100">
             </span>
             <p id="add">                 
                 Malar's Thiruveragam <br>
@@ -87,6 +86,9 @@
                 Velachery, Chennai, Tamil Nadu 600042
             </p>
             <hr id="sep"> 
+            <span class="img-container">
+                <img id="mail_img" style="border-radius: 50%;" src="contant/images/red.png" alt="Mail:" width="100">
+            </span>
             <p>info@udayalpadai.org</p>  
         </div>
         <section class="google-map google-map-two">
@@ -97,26 +99,49 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const img = document.getElementById("location_img");
-
-            img.addEventListener("mouseover", function() {
-                img.classList.add("fade-out"); // Start fade-out effect
+            // Handling hover effect for location image
+            const img1 = document.getElementById("location_img");
+    
+            img1.addEventListener("mouseover", function() {
+                img1.classList.add("fade-out"); // Start fade-out effect
                 setTimeout(() => {
-                    img.setAttribute("src", "contant/images/black_location.png");
-                    img.classList.remove("fade-out");
-                    img.classList.add("fade-in"); // Start fade-in effect
+                    img1.setAttribute("src", "contant/images/black_location.png");
+                    img1.classList.remove("fade-out");
+                    img1.classList.add("fade-in"); // Start fade-in effect
                 }, 300); // Match the transition duration
             });
-
-            img.addEventListener("mouseout", function() {
-                img.classList.add("fade-out"); // Start fade-out effect
+    
+            img1.addEventListener("mouseout", function() {
+                img1.classList.add("fade-out"); // Start fade-out effect
                 setTimeout(() => {
-                    img.setAttribute("src", "contant/images/red_location.png");
-                    img.classList.remove("fade-out");
-                    img.classList.add("fade-in"); // Start fade-in effect
+                    img1.setAttribute("src", "contant/images/red_location.png");
+                    img1.classList.remove("fade-out");
+                    img1.classList.add("fade-in"); // Start fade-in effect
+                }, 0); // Match the transition duration
+            });
+    
+            // Handling hover effect for mail image
+            const img2 = document.getElementById("mail_img");
+    
+            img2.addEventListener("mouseover", function() {
+                img2.classList.add("fade-out"); // Start fade-out effect
+                setTimeout(() => {
+                    img2.setAttribute("src", "contant/images/black_mail.png");
+                    img2.classList.remove("fade-out");
+                    img2.classList.add("fade-in"); // Start fade-in effect
                 }, 300); // Match the transition duration
+            });
+    
+            img2.addEventListener("mouseout", function() {
+                img2.classList.add("fade-out"); // Start fade-out effect
+                setTimeout(() => {
+                    img2.setAttribute("src", "contant/images/red.png");
+                    img2.classList.remove("fade-out");
+                    img2.classList.add("fade-in"); // Start fade-in effect
+                }, 0); // Match the transition duration
             });
         });
     </script>
+    
 </body>
 </html>
