@@ -5,9 +5,8 @@
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    top: 5px;
+    justify-content: space-between;   
+    top: 0px;
     position: sticky;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     padding-bottom: 20px;

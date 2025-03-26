@@ -6,6 +6,57 @@
     <title>Contact - Udayal Padai Charitable Trust</title>
     <link rel="shortcut icon" href="contant/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="contant/s.css">    
+    <style>
+        .grid-address {
+            margin-top: 20px;
+        }
+        .details {
+            display: flex;
+            flex-direction: row;
+            background-color: #ffc100;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+            height: 100px;
+            border-radius: 10px;
+            padding: 20px 20px 0px 20px;
+        }
+        #add {
+            margin-right: 250px;
+        }
+        #sep {
+            width: 2px;
+            height: 80px;
+            background-color: black;
+            margin-left: 20px;
+            margin-right: 120px;
+        }
+        .google-map-two {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        }
+        /* Adding hover effect for location image */
+        .img_container {
+            border-radius: 50px;
+            background-color: yellow;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .img_container:hover {
+            background-color: white; /* Changes background color on hover */
+        }
+        /* Animation for image fade effect */
+        #location_img {
+            transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+        }
+        #location_img.fade-out {
+            opacity: 0; /* Fades out the image */
+        }
+        #location_img.fade-in {
+            opacity: 1; /* Fades in the image */
+        }
+    </style>
 </head>
 <body>
     <div class="nav">
@@ -22,6 +73,47 @@
             </div>
         </div>
     </div>  
-    <script src="contant/s.js"></script>
+    <div class="grid-address">
+        <div class="details">
+            <span class="img-container">
+                <img id="location_img" style="border-radius: 50%;" src="contant/images/red_location.png" alt="Location" width="100">
+            </span>
+            <p id="add">                 
+                Malar's Thiruveragam <br>
+                121, 2nd St, VGP Selva Nagar Extension, VGP Selva Nagar, <br>
+                Velachery, Chennai, Tamil Nadu 600042
+            </p>
+            <hr id="sep"> 
+            <p>info@udayalpadai.org</p>  
+        </div>
+        <section class="google-map google-map-two">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9769632599186!2d80.2235615!3d12.9733252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525da0eab7ecf1%3A0x1aac4ec16f63c981!2sMalar&#39;s%20Thiruveragam!5e0!3m2!1sen!2sin!4v1741096651217!5m2!1sen!2sin" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const img = document.getElementById("location_img");
+
+            img.addEventListener("mouseover", function() {
+                img.classList.add("fade-out"); // Start fade-out effect
+                setTimeout(() => {
+                    img.setAttribute("src", "contant/images/black_location.png");
+                    img.classList.remove("fade-out");
+                    img.classList.add("fade-in"); // Start fade-in effect
+                }, 300); // Match the transition duration
+            });
+
+            img.addEventListener("mouseout", function() {
+                img.classList.add("fade-out"); // Start fade-out effect
+                setTimeout(() => {
+                    img.setAttribute("src", "contant/images/red_location.png");
+                    img.classList.remove("fade-out");
+                    img.classList.add("fade-in"); // Start fade-in effect
+                }, 300); // Match the transition duration
+            });
+        });
+    </script>
 </body>
 </html>
